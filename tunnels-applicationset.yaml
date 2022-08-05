@@ -14,14 +14,15 @@ spec:
     spec:
       project: default
       source:
+        chart: inlets
         repoURL: https://github.com/welteki/inlets-server-argocd-demo.git
         targetRevision: HEAD
-        path: inlets
         helm:
           valueFiles:
             - '{{valuesFile}}'
       destination:
         server: https://kubernetes.default.svc
+        namespace: default
       syncPolicy:
         automated:
           selfHeal: true

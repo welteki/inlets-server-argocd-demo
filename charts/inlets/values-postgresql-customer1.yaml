@@ -1,5 +1,7 @@
-inletsPro:
+inlets-pro:
   tokenSecretName: postgresql-customer1-token
+  ingress:
+    domain: postgresql-customer1.inletscd.welteki.dev
 
   dataPlane:
     type: ClusterIP

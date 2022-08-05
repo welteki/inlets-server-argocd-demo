@@ -1,5 +1,7 @@
-inletsPro:
+inlets-pro:
   tokenSecretName: mysql-customer2-token
+  ingress:
+    domain: mysql-customer2.inletscd.welteki.dev
 
   dataPlane:
     type: ClusterIP
