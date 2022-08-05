@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: inlets-tunnel
+spec:
+  generators:
+  - list:
+      elements:
+      - name: postgresql-customer1-tunnel
+        valuesFile: values-postgresql-customer1.yaml
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/welteki/inlets-server-argocd-demo.git
+        targetRevision: HEAD
+        path: inlets
+        helm:
+          valueFiles:
+            - '{{valuesFile}}'
+      destination:
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          selfHeal: true

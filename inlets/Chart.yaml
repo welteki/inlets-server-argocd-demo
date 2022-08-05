@@ -1,0 +1,10 @@
+apiVersion: v2
+name: inlets
+description: Helm chart for an inlets-pro TCP server
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+dependencies:
+  - name: inletsPro
+    version: 0.3.0
+    repository: https://inlets.github.io/inlets-pro/charts/inlets-pro

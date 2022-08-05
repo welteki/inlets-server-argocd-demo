@@ -1,0 +1,10 @@
+inletsPro:
+  tokenSecretName: postgresql-customer1-token
+
+  dataPlane:
+    type: ClusterIP
+    ports:
+    - targetPort: 5432
+      protocol: TCP
+      name: postgresql
+      port: 5432

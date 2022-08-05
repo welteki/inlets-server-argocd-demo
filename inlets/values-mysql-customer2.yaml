@@ -1,0 +1,10 @@
+inletsPro:
+  tokenSecretName: mysql-customer2-token
+
+  dataPlane:
+    type: ClusterIP
+    ports:
+    - targetPort: 3306
+      protocol: TCP
+      name: mysql
+      port: 3306
